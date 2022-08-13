@@ -1,15 +1,20 @@
 NAME = megaphone
 
+CC = c++
+
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = megaphone.cpp
 
+OBJ = $(SRC:.cpp=.o)
+
 all: $(NAME)
-$(NAME): $(OBJ)
-	gcc $(FLAGS)
+
+$(NAME):$(SRC)
+	$(CC) $(SRC) $(FLAGS) -o $@
 
 %.o: %.cpp
-	gcc -c -o $@ $(CFLAGS)
+	$(CC) -c -o $@ $(FLAGS)
 
 git:
 	@git add .
@@ -18,7 +23,6 @@ git:
 
 clean:
 		rm -f $(OBJ)
-		rm -rf ./builds
 
 fclean: clean
 		rm -f $(NAME) $(OBJ)
