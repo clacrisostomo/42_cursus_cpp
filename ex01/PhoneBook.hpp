@@ -5,17 +5,16 @@
 
 class PhoneBook{
 
-	public:
-
-		PhoneBook();
-		~PhoneBook();
-
 	private:
-
 
 		void addContact();
 		void searchContact();
 		Contact	_database[8];
+
+	public:
+
+		PhoneBook();
+		~PhoneBook();
 
 };
 
