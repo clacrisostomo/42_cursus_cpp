@@ -14,7 +14,7 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME) $(INC)
 
 $(NAME): $(OBJ) $(INC)
-	$(CC) $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 ## $(FLAGS) $< -o $@
 
 .cpp.o:
