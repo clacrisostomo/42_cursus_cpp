@@ -7,7 +7,7 @@ int main(){
 
 	std::cout << "Welcome to our crepioca PhoneBook!" << std::endl;
 	
-	while (42)
+	while (!std::cin.eof())
 	{
 		std::cout << "Insert one of the following commands: ADD, SEARCH or EXIT:" << std::endl;
 		std::getline(std::cin, command);

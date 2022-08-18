@@ -1,7 +1,7 @@
 #include "./PhoneBook.hpp"
 
 PhoneBook::PhoneBook(){
-	
+
 }
 PhoneBook::~PhoneBook(){
 
@@ -10,21 +10,26 @@ PhoneBook::~PhoneBook(){
 void PhoneBook::addContact(){
 
 	std::string str;
-	std::cout << "Insert first name: ";
-	std::getline(std::cin, str);
-	_contacts[0].setFirstName(str);
-	std::cout << "Insert last name: ";
-	std::getline(std::cin, str);
-	_contacts[0].setLastName(str);
-	std::cout << "Insert nickname: ";
-	std::getline(std::cin, str);
-	_contacts[0].setNickname(str);
-	std::cout << "Insert phone number: ";
-	std::getline(std::cin, str);
-	_contacts[0].setPhoneNumber(str);
-	std::cout << "Insert your darkest secret ;) ";
-	std::getline(std::cin, str);
-	_contacts[0].setDarkestSecret(str);
+
+		std::cout << "Insert first name: ";
+		std::getline(std::cin, str);
+		_contacts[_index % 8].setFirstName(str);
+		std::cout << "Insert last name: ";
+		std::getline(std::cin, str);
+		_contacts[_index % 8].setLastName(str);
+		std::cout << "Insert nickname: ";
+		std::getline(std::cin, str);
+		_contacts[_index % 8].setNickname(str);
+		std::cout << "Insert phone number: ";
+		std::getline(std::cin, str);
+		_contacts[_index % 8].setPhoneNumber(str);
+		std::cout << "Insert your darkest secret ;) ";
+		std::getline(std::cin, str);
+		_contacts[_index % 8].setDarkestSecret(str);
+		
+		_index++;
+	
+	
 }
 
 void PhoneBook::searchContact(){
