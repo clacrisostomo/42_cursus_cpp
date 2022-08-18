@@ -2,20 +2,25 @@ NAME = phonebook
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = 	PhoneBook.cpp \
-		Contact.cpp \
-		PhoneBook.hpp \
+SRC = 	main.cpp \
+		PhoneBook.cpp \
+		Contact.cpp
+
+INC = 	PhoneBook.hpp \
 		Contact.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
-all: $(NAME)
+all: $(NAME) $(INC)
 
-$(NAME):$(SRC)
-	$(CC) $(SRC) $(FLAGS) -o $@
+$(NAME): $(OBJ) $(INC)
+	$(CC) $(OBJ)
+## $(FLAGS) $< -o $@
 
-%.o: %.cpp
-	$(CC) -c -o $@ $(FLAGS)
+.cpp.o:
+	$(CC) $(FLAGS) -c $< -o $@
+##%.o: %.cpp
+##	$(CC) $(INC) -c -o $@ $(FLAGS)
 
 git:
 	@git add .

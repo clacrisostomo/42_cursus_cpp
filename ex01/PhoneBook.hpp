@@ -7,15 +7,18 @@ class PhoneBook{
 
 	private:
 
-		void addContact();
-		void searchContact();
-		Contact	_database[8];
+		Contact	_contacts[8];
 
 	public:
 
 		PhoneBook();
 		~PhoneBook();
 
+		void addContact();
+		void searchContact();
+		void printContacts( void );
+
+		
 };
 
 #endif
