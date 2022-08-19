@@ -17,7 +17,7 @@ class PhoneBook{
 
 		void addContact();
 		void searchContact();
-		void printContacts( void );
+		void printContacts(int i);
 
 		
 };

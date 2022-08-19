@@ -20,7 +20,7 @@ int main(){
 			break;
 		else
 			std::cout << "Please enter a valid command: ADD, SEARCH or EXIT" << std::endl;
-		phonebook.printContacts();
+		//phonebook.printContacts();
 	}
 	return (0);
 }
