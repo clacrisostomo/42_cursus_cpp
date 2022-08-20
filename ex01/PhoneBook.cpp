@@ -78,16 +78,8 @@ void PhoneBook::printContacts(int i) {
 
 std::string PhoneBook::printWord(std::string word){
 
-	std::string new_word;
-
-	//if (word.length() > 10){
-	//	new_word = std::string(word.begin(), (word.begin() + 9) + '.');
-	//	std::cout << "newWord" << new_word;
-	//	return (new_word);
-	//}
 	if (word.length() > 10){
-		new_word = std::string(word.resize(9));
-		return (new_word);
+		return (std::string(word.begin(), (word.begin() + 9)) + '.');
 	}
 	else
 		return (word);
