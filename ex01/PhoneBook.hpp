@@ -19,6 +19,7 @@ class PhoneBook{
 		void searchContact();
 		void printContacts(int i);
 		std::string printWord(std::string word);
+		void exitProgram(std::string cmd);
 
 		
 };
