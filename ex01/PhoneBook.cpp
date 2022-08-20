@@ -13,29 +13,48 @@ void PhoneBook::addContact(){
 
 		std::cout << "Insert first name: ";
 		std::getline(std::cin, str);
+		while (str.length() < 1){
+			std::cout << "Please insert first name: ";
+			std::getline(std::cin, str);
+		}
 		_contacts[_index % 8].setFirstName(str);
 		std::cout << "Insert last name: ";
 		std::getline(std::cin, str);
+		while (str.length() < 1){
+			std::cout << "Please insert last name: ";
+			std::getline(std::cin, str);
+		}
 		_contacts[_index % 8].setLastName(str);
 		std::cout << "Insert nickname: ";
 		std::getline(std::cin, str);
+		while (str.length() < 1){
+			std::cout << "Please insert nickname: ";
+			std::getline(std::cin, str);
+		}
 		_contacts[_index % 8].setNickname(str);
 		std::cout << "Insert phone number: ";
 		std::getline(std::cin, str);
+		while (str.length() < 1){
+			std::cout << "Please insert phone number: ";
+			std::getline(std::cin, str);
+		}
 		_contacts[_index % 8].setPhoneNumber(str);
 		std::cout << "Insert your darkest secret ;) ";
 		std::getline(std::cin, str);
+		while (str.length() < 1){
+			std::cout << "Please insert darkest secret: ";
+			std::getline(std::cin, str);	
+		}
 		_contacts[_index % 8].setDarkestSecret(str);
-		
 		_index++;
 	
 	
 }
 
-// TODO: tratamento de nome maior do que 10 char
 // TODO: tratamento de erros -> mensagens
 // TODO: arrumar quando chama o search e já coloca um argumento
-// TODO: não pode aceitar campos em branco
+
+
 
 void PhoneBook::searchContact(){
 
@@ -58,8 +77,14 @@ void PhoneBook::searchContact(){
 		std::cout << "|" << std::setw(10) << printWord(_contacts[i].getNickname()) << "|" << std::endl;
 		std::cout << "=============================================" << std::endl;
 	}
-	std::cout << "Please chose one contact from the index: ";
+	std::cout << "Please chose one contact from the index or EXIT: ";
 	std::getline(std::cin, nbr);
+	if (nbr == "EXIT")
+		exit(0) ;
+	while (nbr.length() < 1){
+		std::cout << "Please chose one contact from the index or EXIT: ";
+		std::getline(std::cin, nbr);
+	}
 	contact = nbr[0] - '0';
 	printContacts(contact);
 }
@@ -78,7 +103,16 @@ void PhoneBook::printContacts(int i) {
 
 std::string PhoneBook::printWord(std::string word){
 
+	//int i;
+	/*int specialChar = 0;
+
+	for (std::string::iterator it = word.begin(); it != word.end(); it++){
+		if (*it > 127)
+			specialChar++;
+	}*/
+	
 	if (word.length() > 10){
+		
 		return (std::string(word.begin(), (word.begin() + 9)) + '.');
 	}
 	else
