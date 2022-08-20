@@ -1,6 +1,6 @@
 #include "./PhoneBook.hpp"
 
-PhoneBook::PhoneBook(){
+PhoneBook::PhoneBook(): _index(0){
 
 }
 PhoneBook::~PhoneBook(){
@@ -32,17 +32,25 @@ void PhoneBook::addContact(){
 	
 }
 
+// TODO: tratamento de nome maior do que 10 char
+// TODO: tratamento de erros -> mensagens
+// TODO: arrumar quando chama o search e já coloca um argumento
+// TODO: não pode aceitar campos em branco
+
 void PhoneBook::searchContact(){
 
 	std::string nbr;
 	int contact;
 	
+
 	std::cout << "=============================================" << std::endl;
 	std::cout << "|" << std::setw(10) << "INDEX";
 	std::cout << "|" << std::setw(10) << "FIRST NAME";
 	std::cout << "|" << std::setw(10) << "LAST NAME";
 	std::cout << "|" << std::setw(10) << "NICKNAME" << "|" << std::endl;
 	std::cout << "|==========|==========|==========|==========|" << std::endl;
+
+
 	for (int i = 0; i < (_index > 8 ? 8 : _index); i++){
 		std::cout << "|" << std::setw(10) << i;
 		std::cout << "|" << std::setw(10) << _contacts[i].getFirstName();
@@ -50,7 +58,7 @@ void PhoneBook::searchContact(){
 		std::cout << "|" << std::setw(10) << _contacts[i].getNickname() << "|" << std::endl;
 		std::cout << "=============================================" << std::endl;
 	}
-	std::cout << "Pode escolher fera";
+	std::cout << "Pode escolher fera :";
 	std::getline(std::cin, nbr);
 	contact = nbr[0] - '0';
 	printContacts(contact);
