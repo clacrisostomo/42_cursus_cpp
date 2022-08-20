@@ -53,12 +53,12 @@ void PhoneBook::searchContact(){
 
 	for (int i = 0; i < (_index > 8 ? 8 : _index); i++){
 		std::cout << "|" << std::setw(10) << i;
-		std::cout << "|" << std::setw(10) << _contacts[i].getFirstName();
-		std::cout << "|" << std::setw(10) << _contacts[i].getLastName();
-		std::cout << "|" << std::setw(10) << _contacts[i].getNickname() << "|" << std::endl;
+		std::cout << "|" << std::setw(10) << printWord(_contacts[i].getFirstName());
+		std::cout << "|" << std::setw(10) << printWord(_contacts[i].getLastName());
+		std::cout << "|" << std::setw(10) << printWord(_contacts[i].getNickname()) << "|" << std::endl;
 		std::cout << "=============================================" << std::endl;
 	}
-	std::cout << "Pode escolher fera :";
+	std::cout << "Please chose one contact from the index: ";
 	std::getline(std::cin, nbr);
 	contact = nbr[0] - '0';
 	printContacts(contact);
@@ -74,4 +74,21 @@ void PhoneBook::printContacts(int i) {
 	std::cout << "| darkestSecret: " << this->_contacts[i].getDarkestSecret() << std::endl;
 	std::cout << std::endl;
 
+}
+
+std::string PhoneBook::printWord(std::string word){
+
+	std::string new_word;
+
+	//if (word.length() > 10){
+	//	new_word = std::string(word.begin(), (word.begin() + 9) + '.');
+	//	std::cout << "newWord" << new_word;
+	//	return (new_word);
+	//}
+	if (word.length() > 10){
+		new_word = std::string(word.resize(9));
+		return (new_word);
+	}
+	else
+		return (word);
 }
