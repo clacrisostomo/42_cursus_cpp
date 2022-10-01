@@ -8,7 +8,7 @@ Account::Account( int initial_deposit){
 	Account::_totalAmount += initial_deposit;
 	Account::_nbAccounts++;
 	std::cout << "[";
-	std::cout << _displayTimestamp;//yyyyMMdd_hhmmss
+	Account::_displayTimestamp();//yyyyMMdd_hhmmss
 	std::cout << "] ";
 	std::cout << "index:" << this ->_accountIndex;
 	std::cout << ";amount:" << this ->_amount;
@@ -25,11 +25,26 @@ int	Account::getTotalAmount( void ){
 	return (_totalAmount);
 }
 int	Account::getNbDeposits( void ){
-	return (Account::_nbDeposits);
+	return (_totalNbDeposits);
 }
 int	Account::getNbWithdrawals( void ){
-	return (Account::_nbWithdrawals);
+	return (_totalNbWithdrawals);
 }
+
+void Account::_displayTimestamp(void){
+	time_t timer;
+	struct tm *date;
+
+	time(&timer);
+	date = localtime(&timer);
+	std::cout << date->tm_year + 1900 <<
+	std::setfill ('0') << std::setw(2) << date->tm_mon + 1 <<
+	std::setfill ('0') << std::setw(2) << date->tm_mday << "_" <<
+	std::setfill ('0') << std::setw(2) << date->tm_hour <<
+	std::setfill ('0') << std::setw(2) << date->tm_min <<
+	std::setfill ('0') << std::setw(2) << date->tm_sec;
+}
+
 //Funciona como global | Inicial como zero
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
