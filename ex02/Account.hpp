@@ -11,6 +11,9 @@
 #pragma once
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
+#include <iostream>
+#include <time.h>
+#include <iomanip>
 
 // ************************************************************************** //
 //                               Account Class                                //
@@ -27,7 +30,7 @@ public:
 	static int	getTotalAmount( void );//saldo
 	static int	getNbDeposits( void );//quantidade de depositos
 	static int	getNbWithdrawals( void );//quantidade de saques
-	static void	displayAccountsInfos( void );
+	static void	displayAccountsInfos( void );//soma todas as contas, depósitos e saques
 
 	Account( int initial_deposit );
 	~Account( void );
