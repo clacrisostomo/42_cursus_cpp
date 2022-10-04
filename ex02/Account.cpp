@@ -16,6 +16,12 @@ Account::Account(int initial_deposit){
 }
 
 Account::~Account(){
+	std::cout << "[";
+	Account::_displayTimestamp();//yyyyMMdd_hhmmss
+	std::cout << "] ";
+	std::cout << "index:" << this ->_accountIndex;
+	std::cout << ";amount:" << this ->_amount;
+	std::cout << ";closed" << std::endl;
 }
 
 void Account::displayAccountsInfos(void){
