@@ -66,7 +66,16 @@ void Account::displayStatus(void) const{
 }
 
 void Account::makeDeposit(int deposit){
-	
+	std::cout << "[";
+	Account::_displayTimestamp();//yyyyMMdd_hhmmss
+	std::cout << "] ";
+	std::cout << "index:" << this ->_accountIndex;
+	std::cout << ";p_amount:" << this ->_amount;
+	std::cout << ";deposit:" << deposit;
+	Account::_amount = _amount + deposit;
+	std::cout << ";amount:" << _amount;
+	Account::_nbDeposits++;
+	std::cout << ";nb_deposits:" << this ->_nbDeposits << std::endl;
 }
 
 //Funciona como global | Inicial como zero
