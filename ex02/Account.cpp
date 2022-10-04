@@ -78,6 +78,30 @@ void Account::makeDeposit(int deposit){
 	std::cout << ";nb_deposits:" << this ->_nbDeposits << std::endl;
 }
 
+bool Account::makeWithdrawal(int withdrawal){
+	std::cout << "[";
+	Account::_displayTimestamp();//yyyyMMdd_hhmmss
+	std::cout << "] ";
+	std::cout << "index:" << this ->_accountIndex;
+	std::cout << ";p_amount:" << this ->_amount << ";withdrawal:";
+	if (Account::checkAmount() < withdrawal){
+		std::cout << "refused" << std::endl;
+		return false;
+	}
+	else {
+		std::cout << withdrawal;
+		Account::_amount = _amount - withdrawal;
+		std::cout << ";amount:" << _amount;
+		Account::_nbWithdrawals++;
+		std::cout << ";nb_withdrawals:" << this ->_nbWithdrawals << std::endl;
+		return true;
+	}
+}
+
+int Account::checkAmount(void) const{
+	return _amount;
+}
+
 //Funciona como global | Inicial como zero
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
