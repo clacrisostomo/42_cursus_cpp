@@ -1,6 +1,6 @@
-# include "./Account.hpp"
+# include "Account.hpp"
 
-Account::Account( int initial_deposit){
+Account::Account(int initial_deposit){
 	this ->_accountIndex = Account::getNbAccounts();
 	this ->_amount = initial_deposit;
 	this ->_nbDeposits = 0;
@@ -16,6 +16,16 @@ Account::Account( int initial_deposit){
 }
 
 Account::~Account(){
+}
+
+void Account::displayAccountsInfos(void){
+	std::cout << "[";
+	Account::_displayTimestamp();//yyyyMMdd_hhmmss
+	std::cout << "] ";
+	std::cout << "accounts:" << _nbAccounts;
+	std::cout << ";total:" << _totalAmount;
+	std::cout << ";deposits:" << _totalNbDeposits;
+	std::cout << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
 int	Account::getNbAccounts( void ){
@@ -43,6 +53,20 @@ void Account::_displayTimestamp(void){
 	std::setfill ('0') << std::setw(2) << date->tm_hour <<
 	std::setfill ('0') << std::setw(2) << date->tm_min <<
 	std::setfill ('0') << std::setw(2) << date->tm_sec;
+}
+
+void Account::displayStatus(void) const{
+	std::cout << "[";
+	Account::_displayTimestamp();//yyyyMMdd_hhmmss
+	std::cout << "] ";
+	std::cout << "index:" << this ->_accountIndex;
+	std::cout << ";amount:" << this ->_amount;
+	std::cout << ";deposits:" << this ->_nbDeposits;
+	std::cout << ";withdrawals:" << this ->_nbWithdrawals << std::endl;
+}
+
+void Account::makeDeposit(int deposit){
+	
 }
 
 //Funciona como global | Inicial como zero
