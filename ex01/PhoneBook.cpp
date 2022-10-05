@@ -101,7 +101,7 @@ void PhoneBook::searchContact(){
 	std::cout << "Please chose one contact from the index: ";
 	std::getline(std::cin, nbr);
 	exitProgram(nbr);
-	while (nbr.length() > 1 || nbr[0] < 48 || nbr[0] > 57){
+	while (nbr.length() > 1 || nbr[0] < 48 || nbr[0] > 55){
 		std::cout << "Please enter a number from 0 to 7: ";
 		std::getline(std::cin, nbr);
 		exitProgram(nbr);
