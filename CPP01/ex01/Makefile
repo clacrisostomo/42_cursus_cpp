@@ -1,11 +1,10 @@
 NAME = zombie
 
-CC = c++
+CC = clang
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = 	main.cpp \
 		Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp
+		zombieHorde.cpp
 
 INC = 	Zombie.hpp
 

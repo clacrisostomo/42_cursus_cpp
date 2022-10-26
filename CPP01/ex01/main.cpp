@@ -1,11 +1,7 @@
 #include "./Zombie.hpp"
 
 int main(void){
-    Zombie *Z;
-
-    Z = newZombie("Zumbido");
-    Z->announce();
-    randomChump("clarivader");
-    delete Z;
+    Zombie *horde = zombieHorde(5,"clarivader");
+    delete[] horde;
     return (0);
 }
