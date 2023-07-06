@@ -1,18 +1,15 @@
-NAME = zombie_horde
+NAME = refs
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = 	main.cpp \
-		Zombie.cpp \
-		zombieHorde.cpp
+SRC = 	main.cpp 
 
-INC = 	Zombie.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME) $(INC)
 
-$(NAME): $(OBJ) $(INC)
+$(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 ## $(FLAGS) $< -o $@
 
