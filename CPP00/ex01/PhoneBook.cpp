@@ -72,11 +72,6 @@ void PhoneBook::addContact(){
 	
 }
 
-// TODO: tratamento de erros -> mensagens
-// TODO: arrumar quando chama o search e já coloca um argumento
-
-
-
 void PhoneBook::searchContact(){
 
 	std::string nbr;
@@ -128,14 +123,6 @@ void PhoneBook::printContacts(int i) {
 }
 
 std::string PhoneBook::printWord(std::string word){
-
-	//int i;
-	/*int specialChar = 0;
-
-	for (std::string::iterator it = word.begin(); it != word.end(); it++){
-		if (*it > 127)
-			specialChar++;
-	}*/
 	
 	if (word.length() > 10){
 		

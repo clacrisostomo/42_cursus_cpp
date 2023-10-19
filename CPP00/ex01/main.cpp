@@ -5,7 +5,7 @@ int main(){
 	std::string	command;
 	PhoneBook	phonebook;
 
-	std::cout << "Welcome to our crepioca PhoneBook!" << std::endl;
+	std::cout << "\e[1;36m" "Welcome to PhoneBook!" "\e[0m" << std::endl;
 	
 	while (!std::cin.eof())
 	{
@@ -14,14 +14,13 @@ int main(){
 		std::getline(std::cin, command);
 
 		if (command == "EXIT")
-			break;
+			phonebook.exitProgram(command);
 		else if (command == "ADD")
 			phonebook.addContact();
 		else if (command == "SEARCH")
 			phonebook.searchContact();
 		else
 			std::cout << "Please enter a valid command: ADD, SEARCH or EXIT" << std::endl;
-		//phonebook.printContacts();
 	}
 	return (0);
 }
