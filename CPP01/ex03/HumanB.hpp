@@ -13,13 +13,10 @@ class HumanB{
 	public:
 
 		HumanB( std::string name );
-		HumanB();
 		~HumanB();
 
-		std::string getName( void );
-		void setName( std::string name );
 		void attack( void );
-		void setWeapon( Weapon *type);
+		void setWeapon( Weapon &type);
 };
 
 #endif

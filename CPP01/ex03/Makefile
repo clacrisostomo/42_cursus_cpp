@@ -1,4 +1,4 @@
-NAME = 
+NAME = violence
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=leak
@@ -18,12 +18,9 @@ all: $(NAME) $(INC)
 
 $(NAME): $(OBJ) $(INC)
 	$(CC) $(OBJ) -o $(NAME)
-## $(FLAGS) $< -o $@
 
 .cpp.o:
 	$(CC) $(FLAGS) -c $< -o $@
-##%.o: %.cpp
-##	$(CC) $(INC) -c -o $@ $(FLAGS)
 
 git:
 	@git add .

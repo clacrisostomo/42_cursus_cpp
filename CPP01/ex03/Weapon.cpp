@@ -6,9 +6,10 @@ Weapon::Weapon(std::string type):_type(type){
 
 Weapon::Weapon(){
 
+	this->_type = "";
 }
 
-std::string Weapon::getType( void ){
+std::string& Weapon::getType( void ){
 	
 	return (this->_type);
 }
