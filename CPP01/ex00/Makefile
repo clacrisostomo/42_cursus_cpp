@@ -1,7 +1,7 @@
 NAME = zombie
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=leak
 SRC = 	main.cpp \
 		Zombie.cpp \
 		newZombie.cpp \
