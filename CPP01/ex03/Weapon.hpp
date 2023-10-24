@@ -12,12 +12,12 @@ class Weapon{
 
 	public:
 
-		Weapon(std::string type);
+		Weapon( std::string type );
 		Weapon();
 		~Weapon();
 		
-		std::string getType();
-		void setType(std::string type);
+		std::string getType( void );
+		void setType( std::string type );
 };
 
 #endif
