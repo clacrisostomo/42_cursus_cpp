@@ -12,7 +12,7 @@ class Zombie{
 
     public:
             
-            Zombie(std::string name);
+            Zombie( std::string name );
             Zombie();
             ~Zombie();
 
@@ -22,6 +22,6 @@ class Zombie{
 };
 
 Zombie* newZombie ( std::string name );
-Zombie* zombieHorde(int n, std::string name);
+Zombie* zombieHorde( int N, std::string name );
 
 #endif
