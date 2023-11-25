@@ -69,6 +69,7 @@ int main ( int argc, char **argv ){
         return (1);
     if (file_check(from) == 1)
         return (2);
+	filename = filename.c_str();
     std::ofstream to(filename.append(".replace"));
     tmp = content_to_string(from);
     find_and_replace(tmp, s1, s2);
