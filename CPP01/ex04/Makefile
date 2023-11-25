@@ -3,16 +3,13 @@ NAME = find_replace
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = 	main.cpp \
-		
-
-INC = 	
 
 
 OBJ = $(SRC:.cpp=.o)
 
-all: $(NAME) $(INC)
+all: $(NAME)
 
-$(NAME): $(OBJ) $(INC)
+$(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 .cpp.o:
