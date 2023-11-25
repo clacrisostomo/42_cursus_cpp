@@ -60,6 +60,7 @@ int main ( int argc, char **argv ){
 
     std::ifstream   from(argv[1]);
     std::string filename = argv[1];
+	filename += ".replace";
     std::string s1 = argv[2];
     std::string s2 = argv[3];
     std::string tmp;
@@ -69,15 +70,9 @@ int main ( int argc, char **argv ){
         return (1);
     if (file_check(from) == 1)
         return (2);
-	filename = filename.c_str();
-    std::ofstream to(filename.append(".replace"));
+    std::ofstream to(filename.c_str());
     tmp = content_to_string(from);
     find_and_replace(tmp, s1, s2);
     new_file(to, tmp);
     return (0);
 }
-
-//TODO refatorar
-//TODO main: verificação de args e chama outras funções
-//TODO 
-//TODO testes
