@@ -1,21 +1,14 @@
 #include "Harl.hpp"
 
-int main (void){
+int main (int argc, char **argv){
 
 	Harl	Karen;
 
-	std::string complain[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	if (argc != 2){
 
-	srand(time(NULL));
-
-	for (int i = 0; i < 5; i++)
-	{
-		std::cout << "Test " << i << std::endl;
-		Karen.complain(complain[rand()%4]);
-		std::cout << std::endl;
+		std::cout << "Please insert a level such as \"DEBUG\", \"INFO\", \"WARNING\", \"ERROR\"" << std::endl;
+		return (1);
 	}
-	// Karen.complain(complain[rand()%4]);
-	// Karen.complain(complain[rand()%4]);
-	// Karen.complain(complain[rand()%4]);
+	Karen.complain(argv[1]);
 	return (0);
 }
