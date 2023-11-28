@@ -6,7 +6,7 @@ int main (void){
 
 	std::string complain[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	srand(time(nullptr));
+	srand(time(NULL));
 
 	Karen.complain(complain[rand()%4]);
 	Karen.complain(complain[rand()%4]);
