@@ -11,6 +11,7 @@
 #pragma once
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
+
 #include <iostream>
 #include <time.h>
 #include <iomanip>
@@ -26,11 +27,11 @@ public:
 
 	typedef Account		t;
 
-	static int	getNbAccounts( void );//Num da conta
-	static int	getTotalAmount( void );//saldo
-	static int	getNbDeposits( void );//quantidade de depositos
-	static int	getNbWithdrawals( void );//quantidade de saques
-	static void	displayAccountsInfos( void );//soma todas as contas, depósitos e saques
+	static int	getNbAccounts( void );
+	static int	getTotalAmount( void );
+	static int	getNbDeposits( void );
+	static int	getNbWithdrawals( void );
+	static void	displayAccountsInfos( void );
 
 	Account( int initial_deposit );
 	~Account( void );
@@ -38,7 +39,7 @@ public:
 	void	makeDeposit( int deposit );
 	bool	makeWithdrawal( int withdrawal );
 	int		checkAmount( void ) const;
-	void	displayStatus( void ) const;//info:index, amount, depositos e saques
+	void	displayStatus( void ) const;
 
 
 private:
