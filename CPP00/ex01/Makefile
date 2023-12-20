@@ -1,26 +1,35 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: csantos- <csantos-@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/03 20:00:01 by csantos-          #+#    #+#              #
+#    Updated: 2023/10/24 16:09:42 by csantos-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = phonebook
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=leak
+FLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=leak
 SRC = 	main.cpp \
 		PhoneBook.cpp \
-		Contact.cpp
-
+		Contact.cpp \
+		ContactDetails.cpp
+		
 INC = 	PhoneBook.hpp \
 		Contact.hpp
 
-OBJ = $(SRC:.cpp=.o)
+OBJ = 	$(SRC:.cpp=.o)
 
 all: $(NAME) $(INC)
-
 $(NAME): $(OBJ) $(INC)
 	$(CC) $(OBJ) -o $(NAME)
-## $(FLAGS) $< -o $@
 
 .cpp.o:
 	$(CC) $(FLAGS) -c $< -o $@
-##%.o: %.cpp
-##	$(CC) $(INC) -c -o $@ $(FLAGS)
 
 git:
 	@git add .
@@ -28,9 +37,9 @@ git:
 	@git push
 
 clean:
-		rm -f $(OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
-		rm -f $(NAME) $(OBJ)
+	rm -f $(NAME) $(OBJ)
 
-re: fclean all
+re: clean all

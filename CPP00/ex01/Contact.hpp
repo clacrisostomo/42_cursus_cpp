@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csantos- <csantos-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/03 20:14:56 by csantos-          #+#    #+#             */
+/*   Updated: 2023/10/24 16:14:39 by csantos-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
@@ -8,33 +20,32 @@
 
 class Contact{
 
-	private:
-		
-		std::string		_firstName;
-		std::string		_lastName;
-		std::string		_nickname;
-		std::string		_phoneNumber;
-		std::string		_darkestSecret;
-	
-	public:
-		Contact();
-		~Contact();
+    private:
+        std::string     _firstName;
+        std::string     _lastName;
+        std::string     _nickname;
+        std::string     _phoneNumber;
+        std::string     _darkestSecret;
 
-		std::string getFirstName( void );
-		void setFirstName(std::string firstName);
+    public:
 
-		std::string getLastName( void );
-		void setLastName(std::string lastName);
+        Contact();
+        ~Contact();
 
-		std::string getNickname( void );
-		void setNickname(std::string nickname);
+        std::string getFirstName(void);
+        void setFirstName(std::string firstName);
 
-		std::string getPhoneNumber( void );
-		void setPhoneNumber(std::string phoneNumber);
+        std::string getLastName(void);
+        void setLastName(std::string lastName);
 
-		std::string getDarkestSecret( void );
-		void setDarkestSecret(std::string darkestSecret);
+        std::string getNickname(void);
+        void setNickname(std::string nickname);
 
+        std::string getPhoneNumber(void);
+        void setPhoneNumber(std::string phoneNumber);
+
+        std::string getDarkestSecret(void);
+        void setDarkestSecret(std::string darkestSecret);
 };
 
 #endif
